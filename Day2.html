@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <!-- BootStrap link attachment -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- External CSS -->
+    <!-- <link rel="stylesheet" href="./day2.css"/> -->
+    <style>
+      /* Used to increment if its not used then same num will print */
+      body{
+        counter-reset: section;
+        
+      }
+      /* Styling for background */
+      #elem1 {
+        width: 50%;
+        max-height: 100px;
+        overflow-y:scroll;
+        background-image: url("98696.jpg");
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-attachment: scroll;
+      }
+      /* #elem1>div{
+        overflow-y: scroll;
+      } */
+
+      /* In order to work on bacground image to scroll need to place image inside div content */
+      #pic {
+        /* background-image: url("98696.jpg"); */
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        /* background-attachment: fixed; */
+      }
+      /* Pseudo elements */
+      #pesudo::first-line{
+        font-size: 50px;
+      }
+
+      /* Combinator selectors and borders,padding,margin,font css usage */
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 5px;
+        margin: 10px;
+        border-collapse: collapse;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: larger;
+        font-weight: lighter;
+        color: blue;
+      }
+
+      /* Link tags design */
+      a{
+        text-decoration: none;
+        transition:font-size 3s ease-in-out;
+        transition-delay: 1s;
+      }
+      a:hover{
+        color: blue;
+        font-size: 30px;
+        text-decoration: none;
+      }
+      a:active{
+        color: gold;
+      }
+
+      #elem>p::first-letter{
+        color: green;
+        font-weight: bolder;
+        font-size: 50px;
+      }
+      /* display designs */
+      #design>ul>li{
+        /* display: inline-block; */
+        display: inline;
+        width: 100px;
+        height: 100px;
+        
+      }
+
+      #design>ul>li:hover{
+        display: block;
+      }
+      .a{
+        display: block;
+      }
+      #flexdiv{
+        display: flex;
+        /* display: none; */
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+
+      /* Counter and before css */
+      h3::before{
+        counter-increment: section;
+        content: "Section" counter(section)": ";
+      }
+    </style>
+
+    
+    
+  </head>
+
+  <body>
+    <!-- Background Styling -->
+    <h4>Background styling css</h2>
+    <div id="elem1">
+      <div>
+      
+      <p id="pic">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+        adipisci corrupti fugit tempora libero molestiae dolores quisquam error
+        quidem eos?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tempora
+        aspernatur praesentium eos nemo officiis labore sed similique
+        repellendus cum blanditiis, distinctio impedit fugit. Reprehenderit
+        harum possimus tenetur non cupiditate eaque aliquid, deserunt corporis
+        fugiat corrupti nobis molestias omnis magnam autem modi odit,
+        consectetur aperiam incidunt ratione hic quia voluptate quae quidem.
+        Amet voluptatibus minus ipsum corporis quae! Sed, alias aperiam.
+        Voluptate ab, omnis earum quos culpa, sit corrupti ducimus suscipit
+        placeat eveniet dicta fugit recusandae cum dolorum possimus expedita.
+      </p>
+      </div>
+    </div>
+
+    <!-- Border and Table design -->
+    <h4>Border padding margin styling css</h2>
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>Age</td>
+      </tr>
+
+      <tr>
+        <th>XYZ</th>
+        <th>123</th>
+      </tr>
+    </table>
+
+    <!-- BootStrap icons -->
+    <h4>Fonts</h4>
+    <i class="glyphicon glyphicon-cloud"></i>
+    <i class="bi bi-badge-cc"></i>
+
+    <!-- Link tags -->
+    <h4>Link properties</h4>
+    <div>
+      <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_icons_fa" target="_blank">Click here</a>
+    </div>
+
+    <!-- display styles usage -->
+    <h4>Display properties</h4>
+    <div id="design">
+      <ul>
+        <li style="font-size: 30px;">abc</li>
+        <li>def</li>
+      </ul>
+      <span class="a">abc</span>
+      <span class="a">efg</span>
+    </div>
+    <div id="flexdiv">
+      <div>
+        <p>kkngknkg</p>
+      </div>
+      <div>
+        fjfnf
+      </div>
+    </div>
+
+    <!-- Counter -->
+    <h3>HTML Tutorial</h2>
+<h3>CSS Tutorial</h2>
+<h3>JavaScript Tutorial</h2>
+<h3>Python Tutorial</h2>
+<h3>SQL Tutorial</h2>
+
+  <!-- span -->
+  <span style="color: blue;"><h1>Hello span</h1></span>
+
+  <p id="pesudo">Hello from pesudo</p>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <p id="demo"></p>
+      <p id="demo1"></p>
+      <input id="in" value="Name" />
+    </div>
+
+    <div>
+      <input type="text" id="fname" onchange="upperCase()" />
+      <button id="myBtn">Click here to display date</button>
+    </div>
+    <p id="cookie"></p>
+
+    <p id="prom"></p>
+
+    <p id="02">Hello Sweden!</p>
+
+    <p id="04"></p>
+
+    <div id="appendChild"></div>
+
+    <p id="textC">Hi from text content</p>
+    <a href="Day2.html">Click</a>
+
+    <p id="titl"></p>
+
+    <script>
+      const d = (document.getElementById("demo").innerHTML = "helo from js");
+      document.getElementById("in").value = "Changed"; //Attribut change
+      document.getElementById("in").style.width = "500px"; //Style change
+      document.getElementById("in").style.width = "500px";
+      let para = document.createElement("p");
+      para.innerText = "This is a paragraph";
+
+      document.getElementById("appendChild").appendChild(para);
+
+      let textC = document.getElementById("textC").textContent;
+      console.log(textC);
+
+      //  Events
+      function upperCase() {
+        let x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+      }
+
+      //   Listner
+      document.getElementById("myBtn").addEventListener("click", displayDate);
+
+      function displayDate() {
+        document.getElementById("demo1").innerHTML = Date();
+      }
+
+      //   BOM Browser object model
+      //   window.open("https://google.com");
+      window.resizeTo(250, 550);
+
+      console.log(window.location.protocol);
+      console.log(window.location.hostname);
+      // window.history.back();
+      // window.history.forward();
+
+      document.getElementById("cookie").innerHTML =
+        "cookiesEnabled is " + navigator.cookieEnabled;
+
+      let queryS = document.querySelectorAll("p");
+      console.log(queryS[0].textContent);
+      queryS[0].innerHTML = "i had changed the first p tag";
+
+      // Alert
+      // window.alert("Warning");
+      // let con = window.confirm("sometext");
+      // console.log(con);
+
+      prompt;
+      let name = prompt("Enter your name", "Badri");
+      document.getElementById("prom").innerHTML = name;
+
+      // GET
+      fetch("https://jsonplaceholder.typicode.com/posts/")
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json.title);
+          document.getElementById("titl").innerHTML = json.title;
+        });
+
+      // POST
+      fetch("https://jsonplaceholder.typicode.com/todos", {
+        method: "POST",
+        body: JSON.stringify({
+          userId: 1,
+          title: "Fix my bugs",
+          completed: false,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+      // Jquery
+
+      $(document).ready(function () {
+        var myText = $("#02").text();
+        $("#04").text(myText);
+
+        // Backend handle Jquery
+        $.get(
+          "https://jsonplaceholder.typicode.com/posts/1",
+          (data, status) => {
+            console.log(data);
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
